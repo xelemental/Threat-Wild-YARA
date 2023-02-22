@@ -3,7 +3,8 @@ rule malware_rc4 {
         author = "ElementalX"
         description = "Detects RC4 algorithm"
         reference = "https://en.wikipedia.org/wiki/RC4"
-        sample = "revil_sample.exe"
+        sample = "revil.bin"
+        sha256 = "329983dc2a23bd951b24780947cb9a6ae3fb80d5ef546e8538dfd9459b176483"
     strings:
         $s1 = { 8D 8D F0 FE FF FF 8B C2 03 CA 83 E0 1F 8A 04 38 88 14 0B 42 88 01 } //Initialize S-box array with values 0 to 255
         $s2 = { 8B 7D F0 8D B5 F0 FE FF FF 8B DF 2B F7 } //Perform Key Scheduling Algorithm to scramble S-Box 
